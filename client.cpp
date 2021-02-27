@@ -20,7 +20,7 @@ main(int argc, char *argv[])
     char buf[BUF_SIZE];
 
    if (argc < 3) {
-        fprintf(stderr, "Usage: %s host port msg...\n", argv[0]);
+        fprintf(stderr, "Client Usage: %s host port msg...\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
@@ -86,7 +86,7 @@ main(int argc, char *argv[])
             exit(EXIT_FAILURE);
         }
 
-       printf("Received %ld bytes: %s\n", (long) nread, buf);
+       printf("\nClient Received %ld bytes response: '%s'\n", (long) nread, buf);
     }
 
    exit(EXIT_SUCCESS);
