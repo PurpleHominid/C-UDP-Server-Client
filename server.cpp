@@ -20,7 +20,7 @@ main(int argc, char *argv[])
     char buf[BUF_SIZE];
 
    if (argc != 2) {
-        fprintf(stderr, "Usage: %s port\n", argv[0]);
+        fprintf(stderr, "Server Usage: %s port\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
@@ -78,8 +78,8 @@ main(int argc, char *argv[])
                         peer_addr_len, host, NI_MAXHOST,
                         service, NI_MAXSERV, NI_NUMERICSERV);
        if (s == 0)
-            printf("Received %ld bytes from %s:%s\n",
-                    (long) nread, host, service);
+            printf("\nServer Received %ld bytes from %s: %s (%s)\n",
+                    (long) nread, host, service, buf);
         else
             fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
 
